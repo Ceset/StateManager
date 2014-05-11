@@ -2,7 +2,6 @@
 
 StatesManager::StatesManager()
 {
-
 }
 
 void StatesManager::addState(std::unique_ptr<State> state, StateID identifier)
@@ -22,24 +21,16 @@ void StatesManager::removeState(StateID identifier)
 
 void StatesManager::removeAllStatesExcept(StateID identifier)
 {
-    std::map<StateID, std::unique_ptr<State>>::iterator iter = mStates.begin();
-    while(iter != mStates.end())
+    for(std::pair<const StateID, std::unique_ptr<State>>& p : mStates)
     {
-        if(iter->first != identifier)
-            mStates.erase(iter);
-        iter++;
+        if(p.first != identifier)
+            mStates.erase(p.first);
     }
 }
 
 void StatesManager::removeAllStates()
 {
     mStates.clear();
-}
-
-void StatesManager::checkStates()
-{
-    for(auto& state : mStates)
-        std::get<1>(state).get()->check();
 }
 
 void StatesManager::updateStates()
