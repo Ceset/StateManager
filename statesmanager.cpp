@@ -21,10 +21,11 @@ void StatesManager::removeState(StateID identifier)
 
 void StatesManager::removeAllStatesExcept(StateID identifier)
 {
-    for(std::pair<const StateID, std::unique_ptr<State>>& p : mStates)
+    for(std::map<StateID, std::unique_ptr<State>>::iterator itr = mStates.begin(); itr != mStates.end(); )
     {
-        if(p.first != identifier)
-            mStates.erase(p.first);
+        if( itr->first != identifier )
+            itr = mStates.erase(itr);
+        else ++itr;
     }
 }
 
