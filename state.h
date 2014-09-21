@@ -28,8 +28,7 @@ public:
 
     // Functions to set and question States activeness.
     bool isActive();
-    void setActive();
-    void setInactive();
+    void setActive(bool isTrue);
 
 private:
     // A bool variable to learn if the class is active
