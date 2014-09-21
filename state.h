@@ -27,8 +27,15 @@ public:
     virtual void render() = 0;
 
     // Functions to set and question States activeness.
-    bool isActive();
-    void setActive(bool isTrue);
+    bool isActive()
+    {
+        return mIsActive;
+    }
+    
+    void setActive(bool isTrue)
+    {
+        mIsActive = isTrue;
+    }
 
 private:
     // A bool variable to learn if the class is active
