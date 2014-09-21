@@ -7,9 +7,10 @@
 #include "state.h"
 
 // This class is a manager to contain and manage
-// all state classes. If you ever desires to add,
-// remove or anything that is wanted this class
-// just use functions that are provided by the
+// all state classes. If you ever desire to add,
+// remove or anything, feel free to do.
+//
+// Otherwise just use functions that are provided by the
 // manager class.
 //
 // In most cases the last added states will be 
