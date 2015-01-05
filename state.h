@@ -1,7 +1,7 @@
 #ifndef STATE_H
 #define STATE_H
 
-// This class is only a base class for State classes.
+// This class is only a abstract class for State classes.
 //
 // Its main purpose is to be inherited by all State
 // classes. So that StateManager class can control
@@ -19,19 +19,16 @@ public:
     State();
     virtual ~State();
 
-    // A common update function that has to be defined by
-    // all State classes.
+    // Update function that must be defined by derived classes
     virtual void update() = 0;
 
-    // A common render function.
-    virtual void render() = 0;
-
-    // Functions to set and question States activeness.
+    // Function to question States activeness
     bool isActive()
     {
         return mIsActive;
     }
-    
+
+    // Function to set States activeness
     void setActive(bool isTrue)
     {
         mIsActive = isTrue;
@@ -39,8 +36,10 @@ public:
 
 private:
     // A bool variable to learn if the class is active
-    // or not. So we can do whatever we want if we ever
-    // desire to way it works.
+    // or not
+    //
+    // Does not do anything particular
+    // Check it and decide what you want to do
     bool mIsActive{true};
 };
 

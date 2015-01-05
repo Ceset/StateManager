@@ -39,9 +39,3 @@ void StatesManager::updateStates()
     for(auto& state : mStates)
         std::get<1>(state).get()->update();
 }
-
-void StatesManager::renderStates()
-{
-    for(auto& state : mStates)
-        std::get<1>(state).get()->render();
-}

@@ -4,44 +4,43 @@
 #include <map>
 #include <memory>
 #include <algorithm>
+#include <functional>
 #include "state.h"
 
 // This class is a manager to contain and manage
 // all state classes. If you ever desire to add,
-// remove or anything, feel free to do.
+// remove or anything, feel free to do
 //
 // Otherwise just use functions that are provided by the
-// manager class.
+// manager class
 //
-// In most cases the last added states will be 
-// rendered to the top. So it will just update, 
-// render according to adding order.
+// It will use adding order to update
 //
 // If you need furture features you should make 
-// changes at the class.
+// changes at the class
 
 class StatesManager
 {
 public:
     StatesManager();
 
-    // A function to add a new state. It will require a unique
-    // state identifier.
+    // A function to add a new state
     void addState(std::unique_ptr<State> state, StateID identifier);
-    // Get the state as a pointer. If needs be.
+
+    // Get the state as a pointer
     State* getState(StateID identifier);
 
-    // Just remove one specific state.
+    // Just remove one specific state
     void removeState(StateID identifier);
-    // Remove all added state except one specific state.
+
+    // Remove all added state except one state
     void removeAllStatesExcept(StateID identifier);
-    // Remove all added states.
+
+    // Remove all added states
     void removeAllStates();
 
-    // Updates all added states.
+    // Updates all added states
     void updateStates();
-    // Renders all added states.
-    void renderStates();
 
 private:
     // The container of our states.
