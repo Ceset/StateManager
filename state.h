@@ -25,13 +25,13 @@ public:
     // Function to question States activeness
     bool isActive()
     {
-        return mIsActive;
+        return m_isActive;
     }
 
     // Function to set States activeness
     void setActive(bool isTrue)
     {
-        mIsActive = isTrue;
+        m_isActive = isTrue;
     }
 
 private:
@@ -40,7 +40,7 @@ private:
     //
     // Does not do anything particular
     // Check it and decide what you want to do
-    bool mIsActive{true};
+    bool m_isActive{true};
 };
 
 #endif // STATE_H
