@@ -4,7 +4,7 @@ StatesManager::StatesManager()
 {
 }
 
-void StatesManager::addState(std::unique_ptr<State> state, StateID identifier)
+void StatesManager::addState(StateID identifier, std::unique_ptr<State> state)
 {
     mStates.insert(std::make_pair(identifier, std::move(state)));
 }
