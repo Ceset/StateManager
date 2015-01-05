@@ -25,7 +25,7 @@ public:
     StatesManager();
 
     // A function to add a new state
-    void addState(std::unique_ptr<State> state, StateID identifier);
+    void addState(StateID identifier, std::unique_ptr<State> state);
 
     // Get the state as a pointer
     State* getState(StateID identifier);
